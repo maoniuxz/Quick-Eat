@@ -19,6 +19,8 @@ module NavigationHelpers
         new_user_registration_path
       # when /login/
       #   new_user_session_path
+      when /the login page/
+        user_session_path
 
 
     # Add more mappings here.

@@ -5,7 +5,6 @@ Given(/^I'm on the signup page$/) do
 end
 
 
-
 Then /^the Sign up form should be shown again$/ do
   assert page.has_content?("prohibited this user from being saved")
 end
@@ -21,19 +20,18 @@ Then /^I should be returned to sign-up page$/ do
 end
 
 
-
-
-Given(/^I'm on the login page$/) do
-  visit(the home page)
+Given /^a valid user$/ do
+  @user = User.create!({
+                           :email => "minikermit@hotmail.com",
+                           :password => "12345678",
+                           :password_confirmation => "12345678"
+                       })
 end
 
-
-
-Then /^the Log in form should be shown again$/ do
-  assert page.has_content?("Invalid email or password.")
-end
-
-
-Then /^I should log in$/ do
-  assert page.has_content?("Invalid email or password.")
+Given /^a logged in user$/ do
+  Given "a valid user"
+  visit signin_url
+  fill_in "Email", :with => "minikermit@hotmail.com"
+  fill_in "Password", :with => "12345678"
+  click_button "Sign in"
 end
