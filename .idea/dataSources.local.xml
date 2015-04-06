@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails Quick-Eat: development" uuid="09732ace-ecc3-4bef-b7f5-4336acdf58c6" />
+    <data-source name="Rails Quick-Eat: test" uuid="95e90f92-bc7b-4356-87a1-99ccc7e8f884" />
+    <data-source name="Rails Quick-Eat: cucumber" uuid="ff501ba1-3462-4eb6-a8cb-bb43ac5c1856" />
+  </component>
+</project>
