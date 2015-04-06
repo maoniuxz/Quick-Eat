@@ -17,10 +17,11 @@ module NavigationHelpers
       '/'
       when /signup/
         new_user_registration_path
-      # when /login/
-      #   new_user_session_path
+
       when /the login page/
         user_session_path
+      when /the idea page/
+        new_idea_path
 
 
     # Add more mappings here.
