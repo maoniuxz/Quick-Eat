@@ -1,3 +1,6 @@
+require 'tempfile'
+
+
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
 
 Given(/^I'm on the signup page$/) do
@@ -76,4 +79,51 @@ end
 
 Then(/^I should be able to see the new idea's page$/) do
   assert page.has_content?("Idea was successfully created")
+end
+
+
+
+
+
+
+
+When(/^I add a new review$/) do
+  visit(new_review_path)
+  fill_in 'Rating', :with => '5'
+  fill_in 'Description', :with => "real good"
+  fill_in 'Checkintime', :with => '9'
+  fill_in 'Waittime', :with => '20'
+  fill_in 'Restaurant', :with => '2'
+  click_button 'Create Review'
+end
+
+Then(/^I should be able to see a successful message$/) do
+
+  assert page.has_content?("successfully")
+end
+
+When(/^I add an incorrect rating review$/) do
+  visit(new_review_path)
+  fill_in 'Rating', :with => '10'
+  fill_in 'Description', :with => "real good"
+  fill_in 'Checkintime', :with => '9'
+  fill_in 'Waittime', :with => '20'
+  fill_in 'Restaurant', :with => '2'
+  click_button 'Create Review'
+end
+
+When(/^I add an incorrect waittime review$/) do
+  visit(new_review_path)
+  fill_in 'Rating', :with => '10'
+  fill_in 'Description', :with => "real good"
+  fill_in 'Checkintime', :with => '9'
+  fill_in 'Waittime', :with => '2.1'
+  fill_in 'Restaurant', :with => '2'
+  click_button 'Create Review'
+end
+
+
+Then(/^I should be able to see an error message$/) do
+
+  assert page.has_content?("error")
 end

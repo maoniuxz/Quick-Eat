@@ -22,6 +22,9 @@ module NavigationHelpers
         user_session_path
       when /the idea page/
         new_idea_path
+      when /the review page/
+        new_review_path
+
 
 
     # Add more mappings here.

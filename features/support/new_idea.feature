@@ -11,7 +11,6 @@ Feature: Ideas and author page
       |Email|minikermit@hotmail.com|
       |Password|12345678|
     And I press "Log in"
-
     When I add a new idea
     Then I should be able to see the new idea's page
 
