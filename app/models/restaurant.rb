@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: restaurants
+#
+#  id           :integer          not null, primary key
+#  address      :string
+#  businessName :string
+#  photoURL     :string
+#  city         :string
+#  state        :string
+#  url          :string
+#  reviewCount  :integer
+#  stars        :float
+#  longitude    :float
+#  latitude     :float
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
 class Restaurant < ActiveRecord::Base
 require 'csv'
 
@@ -14,4 +33,7 @@ require 'csv'
       end # end if 
     end # end CSV.foreach
   end # end self.import(file)
+
+has_many :reviews
+
 end
