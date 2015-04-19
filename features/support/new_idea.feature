@@ -5,7 +5,7 @@ Feature: Ideas and author page
   I want to add a new idea to the list
 
   Scenario: Add an idea
-    Given valid user
+    Given a valid user
     When I go to the login page
     And I fill in the following:
       |Email|minikermit@hotmail.com|
