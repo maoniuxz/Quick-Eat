@@ -1,10 +1,19 @@
 Rails.application.routes.draw do
+  get 'restaurants/index'
+
+  get 'restaurants/import'
+
   devise_for :users
   get 'pages/info'
 
   root :to => redirect('/ideas')
   resources :ideas
   get 'welcome/index'
+  resources :restaurants do
+    collection { post :import }
+  end
+
+  #root to: 'restaurants#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rid: 1
+  address: MyString
+  name: MyString
+  photourl: MyString
+  city: MyString
+  state: MyString
+  url: MyString
+  reviewCount: 1
+  stars: 1.5
+  longitude: 1.5
+  latitude: 1.5
+
+two:
+  rid: 1
+  address: MyString
+  name: MyString
+  photourl: MyString
+  city: MyString
+  state: MyString
+  url: MyString
+  reviewCount: 1
+  stars: 1.5
+  longitude: 1.5
+  latitude: 1.5
