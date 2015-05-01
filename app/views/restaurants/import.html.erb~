@@ -1,0 +1,5 @@
+<h1>Import a CSV File</h1>
+  <%= form_tag import_restaurants_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import CSV" %>
+  <% end %>

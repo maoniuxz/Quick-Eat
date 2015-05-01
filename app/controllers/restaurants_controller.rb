@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
   def index
   #@restaurants = Restaurant.all
-  if params[:search]
+if params[:search]
       @restaurants = Restaurant.search(params[:search]).order("created_at DESC")
     else
       @restaurants = Restaurant.order("created_at DESC")
@@ -12,4 +12,9 @@ class RestaurantsController < ApplicationController
     Restaurant.import(params[:file])
     redirect_to root_url, notice: "Restaurants imported."
   end
+
+def new
+  @restaurants = Restaurant.all
+end
+
 end

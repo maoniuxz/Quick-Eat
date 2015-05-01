@@ -49,20 +49,24 @@
 #
 
 Rails.application.routes.draw do
+  get 'restaurants/new'
+
   resources :reviews
   get 'restaurants/index'
-
   get 'restaurants/import'
-
+  get 'restaurants/new'
   devise_for :users
   get 'pages/info'
 
-  root :to => redirect('/ideas')
+  #root :to => redirect('/ideas')
   resources :ideas
   get 'welcome/index'
+  root 'welcome#index'
   resources :restaurants do
-    collection { post :import }
+    collection { post :import}
   end
+
+
 
   #root to: 'restaurants#index'
 
