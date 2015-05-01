@@ -18,6 +18,7 @@
 #
 
 class Restaurant < ActiveRecord::Base
+searchkick
 require 'csv'
 
   def self.import(file)
@@ -33,6 +34,12 @@ require 'csv'
       end # end if 
     end # end CSV.foreach
   end # end self.import(file)
+
+def self.search(query)
+    # where(:title, query) -> This would return an exact match of the query
+    where("address like ?", "%#{query}%") 
+  end
+
 
 has_many :reviews
 

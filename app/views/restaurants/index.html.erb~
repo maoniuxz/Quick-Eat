@@ -18,7 +18,7 @@
   <tbody>
     <% @restaurants.each do |restaurant| %>
       <tr>
-        <td><%= restaurant.rid %></td>
+        <td><%= restaurant.id %></td>
         <td><%= restaurant.address %></td>
         <td><%= restaurant.businessName %></td>
         <td><%= restaurant.photoURL %></td>
