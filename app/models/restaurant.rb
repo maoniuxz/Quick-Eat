@@ -19,6 +19,8 @@
 
 class Restaurant < ActiveRecord::Base
 #searchkick
+geocoded_by :address
+after_validation :geocode
 require 'csv'
 
   def self.import(file)

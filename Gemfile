@@ -7,6 +7,7 @@ group :test, :development do
   gem 'launchy'
 end
 
+gem 'geocoder'
 #gem "searchkick"
 gem 'carrierwave'
 gem 'devise'

@@ -16,19 +16,20 @@
     </tr>
   </thead>
   <tbody>
-    <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%= restaurant.id %></td>
-        <td><%= restaurant.address %></td>
-        <td><%= restaurant.businessName %></td>
-        <td><%= restaurant.photoURL %></td>
-        <td><%= restaurant.city %></td>
-	<td><%= restaurant.state %></td>
-	<td><%= restaurant.url %></td>
-	<td><%= restaurant.reviewCount %></td>
-	<td><%= restaurant.stars %></td>
-	<td><%= restaurant.longitude %></td>
-	<td><%= restaurant.latitude %></td>
+    <% @restaurants.each do |near| %>
+<!--    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{near.latitude}%2C#{near.longitude}" %> -->
+      <tr> 
+        <td><%= near.id %></td>
+        <td><%= near.address %></td>
+        <td><%= near.businessName %></td>
+        <td><%= near.photoURL %></td>
+        <td><%= near.city %></td>
+	<td><%= near.state %></td>
+	<td><%= near.url %></td>
+	<td><%= near.reviewCount %></td>
+	<td><%= near.stars %></td>
+	<td><%= near.longitude %></td>
+	<td><%= near.latitude %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,5 +37,5 @@
 <!--<h1>Import a CSV File</h1>
   <%= form_tag import_restaurants_path, multipart: true do %>
     <%= file_field_tag :file %>
-    <%= submit_tag "Import CSV" %>
-  <% end %> -->
+    <%= submit_tag "Import CSV" %> -->
+  <% end %> 

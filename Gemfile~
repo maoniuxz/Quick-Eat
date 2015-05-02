@@ -7,7 +7,7 @@ group :test, :development do
   gem 'launchy'
 end
 
-gem "searchkick"
+#gem "searchkick"
 gem 'carrierwave'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
