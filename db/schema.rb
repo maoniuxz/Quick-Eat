@@ -36,22 +36,6 @@ ActiveRecord::Schema.define(version: 20150419021311) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "resturants", force: :cascade do |t|
-    t.integer  "rid"
-    t.string   "address"
-    t.string   "name"
-    t.string   "photourl"
-    t.string   "city"
-    t.string   "state"
-    t.string   "url"
-    t.integer  "reviewCount"
-    t.float    "stars"
-    t.float    "longitude"
-    t.float    "latitude"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.integer  "rating"
     t.text     "description"

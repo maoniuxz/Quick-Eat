@@ -1,7 +1,9 @@
+<html>
+
 <head>
   <title>Simple Search Form</title>
 </head>
-<body>
+<body style=background-image:url(hamb_bg.png)>
   <!-- When submit the form, the view rendered will be the index view of our articles resource -->
   <%= form_tag(restaurants_path, :method => "get", class: "navbar-form", id: "search-form") do %>
     <div class="input-append">
@@ -12,4 +14,6 @@
     </div>
   <% end %>
   <%= yield %>
+
 </body>
+</html>
