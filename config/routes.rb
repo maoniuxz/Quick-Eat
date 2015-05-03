@@ -49,6 +49,8 @@
 #
 
 Rails.application.routes.draw do
+  get 'restaurants/set_geolocation'
+
   get 'restaurants/new'
 
   resources :reviews
@@ -57,6 +59,7 @@ Rails.application.routes.draw do
   get 'restaurants/new'
   devise_for :users
   get 'pages/info'
+  #post '/set_geolocation' => 'restaurants#set_geolocation'
 
   #root :to => redirect('/ideas')
   resources :ideas

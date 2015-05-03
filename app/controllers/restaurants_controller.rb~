@@ -2,7 +2,7 @@ class RestaurantsController < ApplicationController
   def index
   #@restaurants = Restaurant.all
 if params[:search]
-      @restaurants = Restaurant.near(params[:search], 50,:order => :distance)
+      @restaurants = Restaurant.near(params[:search], 0.1, order: 'distance')
       #@restaurants = Restaurant.search(params[:search]).order("created_at DESC")
     else
       @restaurants = Restaurant.order("created_at DESC")
@@ -18,5 +18,4 @@ if params[:search]
 def new
   @restaurants = Restaurant.all
 end
-
 end
