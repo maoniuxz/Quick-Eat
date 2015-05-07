@@ -64,8 +64,8 @@ Rails.application.routes.draw do
   #root :to => redirect('/ideas')
   resources :ideas
   get 'welcome/index'
- # root 'welcome#index'
-  root 'restaurants#new'
+  root 'welcome#index'
+ # root 'restaurants#new'
   resources :restaurants do
     collection { post :import}
   end
