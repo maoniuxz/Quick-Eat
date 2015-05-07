@@ -10,12 +10,17 @@ if params[:search]
   @locations = Array.new
   l=1
       @restaurants = Restaurant.near(params[:search]+" Philadelphia", 0.1, order: 'distance')
+  if @restaurants != []
       @restaurants.each do |i|
         @long_ar << i.longitude
         @lat_ar << i.latitude
         @locations << [i.businessName, i.latitude, i.longitude, l]
         l = l+1
       end
+  else
+    redirect_to root_url, notice: "Restaurants not found in that area."
+  end
+
 
       #@restaurants = Restaurant.search(params[:search]).order("created_at DESC")
     else

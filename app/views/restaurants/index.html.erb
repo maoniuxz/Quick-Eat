@@ -20,7 +20,7 @@
 //var locations = [];
 //locations.push()
 
-//    var locations = [['lalala', <%=  @restaurants.first.latitude %>, <%=  @restaurants.first.longitude %>,1]]
+
     var locations = <%= raw @locations.as_json %>
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 17,
@@ -52,38 +52,38 @@
 
 
 
-    <h1>Nearby Restaurants</h1>
+    <h1 class="text-danger">Nearby Restaurants</h1>
     <table>
       <thead>
       <tr>
-        <th>Id</th>
-        <th>Address</th>
-        <th>Name</th>
-        <th>Photo</th>
-        <th>City</th>
-        <th>State</th>
-        <th>URL</th>
-        <th>ReviewCount</th>
-        <th>Stars</th>
-        <th>Longitude</th>
-        <th>Latitude</th>
+        <th class="text-success">Id</th>
+        <th class="text-success">Address</th>
+        <th class="text-success">Name</th>
+        <th class="text-success">Photo</th>
+        <th class="text-success">City</th>
+        <th class="text-success">State</th>
+        <th class="text-success">URL</th>
+        <th class="text-success">ReviewCount</th>
+        <th class="text-success">Stars</th>
+        <th class="text-success">Longitude</th>
+        <th class="text-success">Latitude</th>
       </tr>
       </thead>
       <tbody>
       <% @restaurants.each do |near| %>
           <!--<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{near.latitude}%2C#{near.longitude}" %>-->
-          <tr>
-            <td><%= near.id %></td>
-            <td><%= near.address %></td>
-            <td><%= near.businessName %></td>
-            <td><%= link_to(near.photoURL, near.photoURL)%></td>
-            <td><%= near.city %></td>
-            <td><%= near.state %></td>
-            <td><%= link_to(near.url, near.url) %></td>
-            <td><%= near.reviewCount %></td>
-            <td><%= near.stars %></td>
-            <td><%= near.longitude %></td>
-            <td><%= near.latitude %></td>
+          <tr class="success">
+            <td class="success"><strong><%= near.id %></td></strong>
+            <td class="success"><strong><%= near.address %></td></strong>
+            <td class="success"><strong><%= near.businessName %></td></strong>
+            <td class="success"><mark><%= link_to(near.photoURL, near.photoURL)%></mark></td>
+            <td class="success"><strong><%= near.city %></td></strong>
+            <td class="success"><strong><%= near.state %></td></strong>
+            <td class="success"><mark><%= link_to(near.url, near.url) %></mark></td>
+            <td class="success"><strong><%= near.reviewCount %></td></strong>
+            <td class="success"><strong><%= near.stars %></td></strong>
+            <td class="success"><strong><%= near.longitude %></td></strong>
+            <td class="success"><strong><%= near.latitude %></td></strong>
           </tr>
       <% end %>
       </tbody>
