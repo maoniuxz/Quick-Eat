@@ -7,7 +7,7 @@
   <!-- When submit the form, the view rendered will be the index view of our articles resource -->
   <%= form_tag(restaurants_path, :method => "get", class: "navbar-form", id: "search-form") do %>
     <div id="search_bar" class="input-append" align="center" >
-      <%= text_field_tag :search, params[:search], size:"50",class: "special_input", placeholder: "Type Desired Location",type:"text" %>
+      <%= text_field_tag :search, params[:search], size:"50",class: "special_input", placeholder: "Type Desired Location near Upenn, e.g. 3100 walnut",type:"text" %>
       <!-- In order to have the "search" icon int the button, we need to use plain HTML instead 
            of using a Rails form helper -->
       <button class="btn btn-info" type="submit"><i class="icon-search"></i>Search</button>
