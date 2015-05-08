@@ -55,7 +55,7 @@
     <table>
       <thead>
       <tr>
-        <th class="text-success">Id</th>
+        <!--<th class="text-success">Id</th>-->
         <th class="text-success">Address</th>
         <th class="text-success">Name</th>
         <th class="text-success">Photo</th>
@@ -64,15 +64,15 @@
         <th class="text-success">URL</th>
         <th class="text-success">ReviewCount</th>
         <th class="text-success">Stars</th>
-        <th class="text-success">Longitude</th>
-        <th class="text-success">Latitude</th>
+        <!--<th class="text-success">Longitude</th>-->
+        <!--<th class="text-success">Latitude</th>-->
       </tr>
       </thead>
       <tbody>
       <% @restaurants.each do |near| %>
           <!--<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{near.latitude}%2C#{near.longitude}" %>-->
           <tr class="success">
-            <td class="success"><strong><%= near.id %></td></strong>
+            <!--<td class="success"><strong><%= near.id %></td></strong>-->
             <td class="success"><strong><%= near.address %></td></strong>
             <td class="success"><strong><%= near.businessName %></td></strong>
             <td class="success"><mark><%= link_to(near.photoURL, near.photoURL)%></mark></td>
@@ -81,8 +81,8 @@
             <td class="success"><mark><%= link_to(near.url, near.url) %></mark></td>
             <td class="success"><strong><%= near.reviewCount %></td></strong>
             <td class="success"><strong><%= near.stars %></td></strong>
-            <td class="success"><strong><%= near.longitude %></td></strong>
-            <td class="success"><strong><%= near.latitude %></td></strong>
+            <!--<td class="success"><strong><%= near.longitude %></td></strong>-->
+            <!--<td class="success"><strong><%= near.latitude %></td></strong>-->
           </tr>
       <% end %>
       </tbody>
